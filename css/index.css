@@ -8,6 +8,7 @@ ul {
     justify-content: center;
     position: sticky;
     border-radius: 8px;
+    z-index: 1000;
 }
 
 ul li a {
@@ -128,7 +129,10 @@ img:hover {
     max-height: 120px;
     display: flex;
     gap: 15px;
-    overflow-x: auto;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .scrollsElement {
@@ -145,4 +149,21 @@ img:hover {
     font-size: 15px;
     margin-bottom: 10px;
     color: rgb(35, 18, 84);
+}
+.scroll-track{
+    display: flex;
+    gap: 50px;
+    width: max-content;
+    animation: scroll 8s linear infinite;
+}
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-25%);
+    }
+}
+.scroll-track:hover{
+    animation-play-state:paused;
 }
