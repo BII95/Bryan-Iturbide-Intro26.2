@@ -1,0 +1,148 @@
+ul {
+    list-style-type: none;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #4A4A4A;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    border-radius: 8px;
+}
+
+ul li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+ul li a:hover {
+    background-color: #111111;
+}
+
+h1{
+    text-align:center;
+
+    font-family:"Sekuya", sans-serif;
+
+    text-transform:uppercase;
+
+    font-size:50px;
+
+    letter-spacing:5px;
+
+    background:linear-gradient(
+        135deg,
+        #5c3a21 0%,
+        #b87333 18%,
+        #ffd27a 35%,
+        #fff4c2 50%,
+        #c0894a 65%,
+        #8b5a2b 82%,
+        #f7d27a 100%
+    );
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 0 8px rgba(255,215,120,0.25),
+    0 0 18px rgba(184,115,51,0.2);
+
+    -webkit-text-stroke:1px rgba(60,40,20,0.6);
+}
+
+h2 {
+    font-family: "Sekuya", sans-serif;
+    color: #4A4A4A;
+    font-size: 30px;
+    margin-bottom: 80px;
+
+}
+
+body {
+    background:
+linear-gradient(
+135deg,
+#bfbfbf 0%,
+#dddddd 15%,
+#ffffff 28%,
+#c7c7c7 40%,
+#f0f0f0 52%,
+#c2c2c2 64%,
+#ffffff 76%,
+#d4d4d4 88%,
+#bababa 100%
+);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+
+
+}
+
+p {
+    color: rgb(35, 18, 84);
+    font-size: 20px;
+    text-align: center;
+}
+
+.job {
+    margin-bottom: 20px;
+    width: 100%;
+    /* border: 5px solid black; */
+    border-radius: 15px;
+    background-color: blanchedalmond;
+    background: linear-gradient(#deeaf2, #fcfbfc);
+
+}
+
+.job-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connect-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+img {
+    width: 50px;
+    transition: 0.3s;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+.scrolls {
+    max-height: 120px;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.scrollsElement {
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 8px;
+    background: #D9D9D9;
+    border: 3px solid #8b0000;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.scrollsElement h2 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: rgb(35, 18, 84);
+}
