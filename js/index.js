@@ -1,4 +1,5 @@
-document.createElement("footer");
+let footerElement=document.createElement("footer");
+document.body.appendChild(footerElement);
 let today= new Date();
 let thisYear=today.getFullYear();
 let footer=document.querySelector("footer");
@@ -9,7 +10,7 @@ document.body.appendChild(copyright);
 let skills=["Javascript","HTML","CSS","Solidworks","GitHub","Javascript","HTML","CSS","Adobe Photoshop","GitHub","Javascript","HTML","CSS","Adobe Photoshop","GitHub","Javascript","HTML","CSS","Adobe Photoshop","GitHub"];
 let skillsSelection=document.getElementById("Skills");
 let skillsList=skillsSelection.querySelector(".wall-tags");
-for(i=0; i<skills.length;i++){
+for(let i=0; i<skills.length;i++){
     let skill=document.createElement("li")
     skill.textContent=skills[i]
     skillsList.appendChild(skill)
