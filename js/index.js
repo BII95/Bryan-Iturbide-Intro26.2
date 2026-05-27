@@ -8,8 +8,8 @@ copyright.textContent=`\u00A9 Bryan Iturbide ${thisYear}`
 footer.appendChild(copyright);  
 
 let skills=["Javascript","HTML","CSS","Solidworks","GitHub","Javascript","HTML","CSS","Adobe Photoshop","GitHub","Javascript","HTML","CSS","Adobe Photoshop","GitHub","Javascript","HTML","CSS","Adobe Photoshop","GitHub"];
-let skillsSelection=document.getElementById("Skills");
-let skillsList=skillsSelection.querySelector(".wall-tags");
+let skillsSection=document.getElementById("Skills");
+let skillsList=skillsSection.querySelector(".wall-tags");
 for(let i=0; i<skills.length;i++){
     let skill=document.createElement("li")
     skill.textContent=skills[i]
