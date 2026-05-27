@@ -5,7 +5,7 @@ let thisYear=today.getFullYear();
 let footer=document.querySelector("footer");
 let copyright=document.createElement('p');
 copyright.textContent=`\u00A9 Bryan Iturbide ${thisYear}`
-document.body.appendChild(copyright);  
+footer.appendChild(copyright);  
 
 let skills=["Javascript","HTML","CSS","Solidworks","GitHub","Javascript","HTML","CSS","Adobe Photoshop","GitHub","Javascript","HTML","CSS","Adobe Photoshop","GitHub","Javascript","HTML","CSS","Adobe Photoshop","GitHub"];
 let skillsSelection=document.getElementById("Skills");
