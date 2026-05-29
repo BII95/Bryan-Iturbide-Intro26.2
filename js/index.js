@@ -1,3 +1,4 @@
+messagesVisable();
 let footerElement = document.createElement("footer");
 document.body.appendChild(footerElement);
 let today = new Date();
@@ -25,13 +26,14 @@ messageForm.addEventListener("submit", (event) => {
     let messageSection = document.getElementById("messages");
     let messageList = messageSection.querySelector('ul');
     let newMessage = document.createElement('li');
+  
     newMessage.innerHTML = `
         <a href="mailto:${emailSubmission}">
             ${nameSubmission}:
         </a>
         <span>
             ${messageSubmission}
-        </span>`;
+        </span>`;  
     let removeButton = document.createElement("button");
     removeButton.textContent = "remove";
     removeButton.type = "button";
@@ -40,9 +42,20 @@ messageForm.addEventListener("submit", (event) => {
     removeButton.addEventListener("click", (event) => {
         let entry = removeButton.parentNode;
         entry.remove();
+        messagesVisable();
     })
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
+    messagesVisable();
     messageForm.reset();
 });
 
+function messagesVisable(){
+    let messagesSectionDom=document.getElementById("messages");
+    let messageList = messagesSectionDom.querySelector('ul');
+    if (messageList.childElementCount==0){
+        messagesSectionDom.style.display= "none";
+    } 
+    else{
+        messagesSectionDom.style.display="";}
+}
