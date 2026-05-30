@@ -32,6 +32,7 @@ messageForm.addEventListener("submit", (event) => {
     let nameSubmission = event.target.usersName.value;
     let emailSubmission = event.target.usersEmail.value;
     let messageSubmission = event.target.usersMessage.value;
+    console.log(nameSubmission,emailSubmission,messageSubmission);
     let messageSection = document.getElementById("messages");
     let messageList = messageSection.querySelector('ul');
     let newMessage = document.createElement('li');
