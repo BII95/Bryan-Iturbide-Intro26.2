@@ -69,12 +69,18 @@ function messagesVisible() {
         messagesSectionDom.style.display = "";
     }
 }
+let projectSection=document.getElementById('Projects');
 fetch("https://api.github.com/users/BII95/repos")
-    .then(res => res.json())
+    .then(res => {
+            if (!res.ok) {
+                throw new Error(`HTTP Error ${res.status}`);
+            }
+
+            return res.json();
+        })
     .then(data =>{
         const repositories=data;
         console.log(repositories);
-        let projectSection=document.getElementById('Projects');
         let projectList=projectSection.querySelector('ul');
         for (let i=0;i<repositories.length;i++){
             let project=document.createElement('li');
@@ -84,4 +90,7 @@ fetch("https://api.github.com/users/BII95/repos")
     })
     .catch(error =>{
         console.error("Error: ", error.message);
+        let errorOnPage=document.createElement("p");
+        errorOnPage.textContent=`API fetch failed: ${error.message}`;
+        projectSection.appendChild(errorOnPage);
     });
