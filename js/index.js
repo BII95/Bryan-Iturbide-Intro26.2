@@ -76,7 +76,7 @@ fetch("https://api.github.com/users/BII95/repos")
         console.log(repositories);
         let projectSection=document.getElementById('Projects');
         let projectList=projectSection.querySelector('ul');
-        for (i=0;i<repositories.length;i++){
+        for (let i=0;i<repositories.length;i++){
             let project=document.createElement('li');
             project.textContent=repositories[i].name;
             projectList.appendChild(project);

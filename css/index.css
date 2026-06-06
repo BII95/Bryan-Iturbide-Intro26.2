@@ -164,6 +164,19 @@ section {
 
 }
 
+#Projects ul{
+    border-radius: 6px;
+    background: aliceblue;
+    box-shadow: 10px 10px 10px #b388eb;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+#Projects ul li {
+    list-style: none;
+    font-family: 'Sekuya';
+    margin: 10px;
+}
 #Contact-form form {
     display: grid;
     border-radius: 12px;
