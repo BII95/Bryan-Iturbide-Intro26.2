@@ -1,3 +1,5 @@
+// const { createElement } = require("react");
+
 messagesVisible();
 //////////FOOTERRRRRRRRRRRRRRRRRRRRRR
 let footerElement = document.createElement("footer");
@@ -67,3 +69,19 @@ function messagesVisible() {
         messagesSectionDom.style.display = "";
     }
 }
+fetch("https://api.github.com/users/BII95/repos")
+    .then(res => res.json())
+    .then(data =>{
+        const repositories=data;
+        console.log(repositories);
+        let projectSection=document.getElementById('Projects');
+        let projectList=projectSection.querySelector('ul');
+        for (i=0;i<repositories.length;i++){
+            let project=document.createElement('li');
+            project.textContent=repositories[i].name;
+            projectList.appendChild(project);
+        }
+    })
+    .catch(error =>{
+        console.error("Error: ", error.message);
+    });
