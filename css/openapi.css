@@ -1,0 +1,47 @@
+body {
+    background:
+        linear-gradient(135deg,
+            #bfbfbf 0%,
+            #dddddd 15%,
+            #ffffff 28%,
+            #c7c7c7 40%,
+            #f0f0f0 52%,
+            #c2c2c2 64%,
+            #ffffff 76%,
+            #d4d4d4 88%,
+            #bababa 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+    font-family: 'Times New Roman', serif;
+    color: rgb(35, 18, 84);
+
+}
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #4A4A4A;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-radius: 8px;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
