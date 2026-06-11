@@ -63,13 +63,13 @@ h1 {
     font-weight: bold;
 
 }
-p{
+p {
     text-align: center;
 }
 section {
     margin: 200px 0;
 }
-#artwork-section{
+#artwork-section {
     position: relative;
     display: flex;
     justify-content: center;
@@ -89,7 +89,7 @@ section {
     height: 350px;
     margin: 0 auto;
 }
-#next-artwork{
+#next-artwork {
     position:absolute;
     bottom:30px;
     right: 10px;
@@ -98,7 +98,7 @@ section {
     cursor: pointer;
     border-radius: 4px;
 }
-#product-section{
+#product-section {
     position: relative;
     display: flex;
     justify-content: center;
@@ -118,7 +118,7 @@ section {
     height: 350px;
     margin: 0 auto;
 }
-#next-product{
+#next-product {
     position:absolute;
     bottom:-30px;
     right: 10px;

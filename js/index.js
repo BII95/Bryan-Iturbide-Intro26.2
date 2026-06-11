@@ -1,7 +1,6 @@
-// const { createElement } = require("react");
-
 messagesVisible();
-//////////FOOTERRRRRRRRRRRRRRRRRRRRRR
+
+//////////FOOTER
 let footerElement = document.createElement("footer");
 document.body.appendChild(footerElement);
 let today = new Date();
@@ -19,7 +18,8 @@ let skills = [
     "GitHub",
     "Adobe Photoshop"
 ];
-/////////SKILLLLLLLSSSSSSSSS
+
+/////////SKILLS
 let skillsSection = document.getElementById("Skills");
 let skillsList = skillsSection.querySelector(".wall-tags");
 for (let i = 0; i < skills.length; i++) {
@@ -27,7 +27,8 @@ for (let i = 0; i < skills.length; i++) {
     skill.textContent = skills[i];
     skillsList.appendChild(skill);
 }
-//CONTACTTTTTTTTTTTTTTTTTT FORMMMMMMMMM
+
+//CONTACT FORM
 let messageForm = document.getElementsByName('leave_message')[0];
 messageForm.addEventListener("submit", (event) => {
     event.preventDefault();
