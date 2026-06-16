@@ -1,7 +1,6 @@
-// const { createElement } = require("react");
-
 messagesVisible();
-//////////FOOTERRRRRRRRRRRRRRRRRRRRRR
+
+//////////FOOTER
 let footerElement = document.createElement("footer");
 document.body.appendChild(footerElement);
 let today = new Date();
@@ -17,9 +16,19 @@ let skills = [
     "CSS",
     "SolidWorks",
     "GitHub",
-    "Adobe Photoshop"
+    "Bi-lingual(English & Spanish)",
+    "Onshape",
+    "Leadership",
+    "Fusion 360",
+    "Python",
+    "Collaboration",
+    "Communication",
+    "Project Management",
+    "MATLAB",
+    "Fusion 360"
 ];
-/////////SKILLLLLLLSSSSSSSSS
+
+/////////SKILLS
 let skillsSection = document.getElementById("Skills");
 let skillsList = skillsSection.querySelector(".wall-tags");
 for (let i = 0; i < skills.length; i++) {
@@ -27,17 +36,24 @@ for (let i = 0; i < skills.length; i++) {
     skill.textContent = skills[i];
     skillsList.appendChild(skill);
 }
-//CONTACTTTTTTTTTTTTTTTTTT FORMMMMMMMMM
+
+//CONTACT FORM
 let messageForm = document.getElementsByName('leave_message')[0];
+
 messageForm.addEventListener("submit", (event) => {
+    
     event.preventDefault();
+   
     let nameSubmission = event.target.usersName.value;
     let emailSubmission = event.target.usersEmail.value;
     let messageSubmission = event.target.usersMessage.value;
+    
     console.log(nameSubmission,emailSubmission,messageSubmission);
+    
     let messageSection = document.getElementById("messages");
     let messageList = messageSection.querySelector('ul');
     let newMessage = document.createElement('li');
+    
     newMessage.innerHTML = `
         <a href="mailto:${emailSubmission}">
             ${nameSubmission}:
@@ -84,8 +100,11 @@ fetch("https://api.github.com/users/BII95/repos")
         let projectList=projectSection.querySelector('ul');
         for (let i=0;i<repositories.length;i++){
             let project=document.createElement('li');
-            project.textContent=repositories[i].name;
-            projectList.appendChild(project);
+            project.innerHTML=`
+            <a href="${repositories[i].html_url}" target="_blank">
+                ${repositories[i].name}
+            </a>`;
+            projectList.appendChild(project);            
         }
     })
     .catch(error =>{
