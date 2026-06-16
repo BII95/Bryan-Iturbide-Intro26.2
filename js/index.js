@@ -16,7 +16,7 @@ let skills = [
     "CSS",
     "SolidWorks",
     "GitHub",
-    "Adobe Photoshop"
+    "Bi-lingual(English & Spanish)"
 ];
 
 /////////SKILLS
@@ -30,15 +30,21 @@ for (let i = 0; i < skills.length; i++) {
 
 //CONTACT FORM
 let messageForm = document.getElementsByName('leave_message')[0];
+
 messageForm.addEventListener("submit", (event) => {
+    
     event.preventDefault();
+   
     let nameSubmission = event.target.usersName.value;
     let emailSubmission = event.target.usersEmail.value;
     let messageSubmission = event.target.usersMessage.value;
+    
     console.log(nameSubmission,emailSubmission,messageSubmission);
+    
     let messageSection = document.getElementById("messages");
     let messageList = messageSection.querySelector('ul');
     let newMessage = document.createElement('li');
+    
     newMessage.innerHTML = `
         <a href="mailto:${emailSubmission}">
             ${nameSubmission}:
@@ -85,8 +91,11 @@ fetch("https://api.github.com/users/BII95/repos")
         let projectList=projectSection.querySelector('ul');
         for (let i=0;i<repositories.length;i++){
             let project=document.createElement('li');
-            project.textContent=repositories[i].name;
-            projectList.appendChild(project);
+            project.innerHTML=`
+            <a href="${repositories[i].html_url}" target="_blank">
+                ${repositories[i].name}
+            </a>`;
+            projectList.appendChild(project);            
         }
     })
     .catch(error =>{

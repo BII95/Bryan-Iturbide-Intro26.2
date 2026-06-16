@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     background:
         linear-gradient(135deg,
@@ -21,6 +22,7 @@ body {
     color: rgb(35, 18, 84);
 
 }
+
 nav {
     position: sticky;
     top: 0;
@@ -96,6 +98,17 @@ h2 {
     font-weight: bold;
 }
 
+#About figure {
+    text-align: center;
+}
+
+#About img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:300px;
+    border-radius: 9px;
+}
 
 p {
     color: rgb(35, 18, 84);
@@ -163,18 +176,28 @@ section {
 }
 
 #Projects ul{
+    display:flex;
+    flex-direction: column;
+    
+}
+
+#Projects ul li {
     border-radius: 6px;
     background: aliceblue;
     box-shadow: 10px 10px 10px #b388eb;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-}
-#Projects ul li {
     list-style: none;
     font-family: 'Sekuya';
     margin: 10px;
+    justify-content:center;
+    text-align: center;
+    height: 3rem;
+    padding-block: 10px;
 }
+
+#Projects ul li:hover {
+    transform: scale(1.03);
+}
+
 #Contact-form form {
     display: grid;
     border-radius: 12px;
@@ -192,6 +215,7 @@ section {
 
 #Contact-form form input {
     background-color: #e1dbea;
+    height: 2.5rem;
     
 }
 
@@ -202,16 +226,17 @@ section {
 }
 
 #submit_button {
-    background-color: #3cff00;
+    background-color: #57fd25;
     border-radius: 8px;
     font-family: "Sekuya", serif;
-
+    height:2.5rem;
 }
 
 #messages li {
     overflow-wrap:anywhere;
     word-wrap: break-word;
 }
+
 #Connect ul {
     list-style-type: none;
     display: flex;
