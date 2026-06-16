@@ -24,7 +24,8 @@ let skills = [
     "Collaboration",
     "Communication",
     "Project Management",
-    "MATLAB"
+    "MATLAB",
+    "Git"
 ];
 
 /////////SKILLS
