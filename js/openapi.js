@@ -81,6 +81,16 @@ function getProducts() {
             let productDisplayed = itemSection.querySelector("ul");
             productDisplayed.innerHTML = "";
             const img = document.createElement("img");
+            img.onerror = () => {
+                productDisplayed.innerHTML = "";
+                const errorMessage = document.createElement("p");
+                errorMessage.textContent =
+                    "Product image unavailable. Loading another product...";
+
+                productDisplayed.appendChild(errorMessage);
+
+                setTimeout(getProducts, 500);
+            };
             img.src = item.image_url;
             const title = document.createElement("h2");
             title.textContent = item.title;
