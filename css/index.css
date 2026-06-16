@@ -237,6 +237,11 @@ section {
     word-wrap: break-word;
 }
 
+#messages button {
+    height:2rem;
+    border-radius: 5px;
+}
+
 #Connect ul {
     list-style-type: none;
     display: flex;

@@ -16,7 +16,16 @@ let skills = [
     "CSS",
     "SolidWorks",
     "GitHub",
-    "Bi-lingual(English & Spanish)"
+    "Bi-lingual(English & Spanish)",
+    "Onshape",
+    "Leadership",
+    "Fusion 360",
+    "Python",
+    "Collaboration",
+    "Communication",
+    "Project Management",
+    "MATLAB",
+    "Fusion 360"
 ];
 
 /////////SKILLS
