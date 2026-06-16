@@ -6,7 +6,7 @@ function getArtwork() {
         .then(res => {
             if (!res.ok) {
                 if (res.status === 404 || res.status === 403 ){
-                     return getArtwork();
+                     return getArtwork();//if fetch error try again
                 }
                 throw new Error(`HTTP Error ${res.status}`);
             }
@@ -20,7 +20,7 @@ function getArtwork() {
            if (!artwork || !artwork.image_id) {
                 return getArtwork();
             }
-            let properLink = `https://www.artic.edu/iiif/2/${artwork.image_id}/full/600,/0/default.jpg`;
+            let properLink = `https://www.artic.edu/iiif/2/${artwork.image_id}/full/600,/0/default.jpg`;//proper link to render images
             let workDisplayed = artworkSection.querySelector("ul");
             workDisplayed.textContent = "";
             const img = document.createElement("img");
@@ -31,6 +31,7 @@ function getArtwork() {
                 artworkSection.querySelector("ul").appendChild(errorOnPage);
             }
             img.src = properLink;
+            //append image details
             const title = document.createElement("h2");
             title.textContent = artwork.title;
             const artist = document.createElement("p");

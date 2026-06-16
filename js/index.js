@@ -74,7 +74,7 @@ messageForm.addEventListener("submit", (event) => {
     messagesVisible();
     messageForm.reset();
 });
-
+//hides messages section if theres none
 function messagesVisible() {
     let messagesSectionDom = document.getElementById("messages");
     let messageList = messagesSectionDom.querySelector('ul');
