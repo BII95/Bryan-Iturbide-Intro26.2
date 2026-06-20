@@ -24,8 +24,9 @@ Installation
 ------------
 
 1.  Clone the repository:
-    git clone https://github.com/BII95/Bryan-Iturbide-Intro26.2.git
-
+```bash
+git clone https://github.com/BII95/Bryan-Iturbide-Intro26.2.git
+```
 1.  Open the project folder.
     
 2.  Open index.html in your browser.
