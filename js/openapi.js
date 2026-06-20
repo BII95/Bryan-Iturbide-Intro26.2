@@ -5,9 +5,6 @@ function getArtwork() {
     fetch(`https://api.artic.edu/api/v1/artworks?page=${randomPage}&limit=1&fields=title,image_id,artist_display,date_start`)
         .then(res => {
             if (!res.ok) {
-                if (res.status === 404 || res.status === 403 ){
-                     return getArtwork();
-                }
                 throw new Error(`HTTP Error ${res.status}`);
             }
             return res.json();
@@ -18,8 +15,8 @@ function getArtwork() {
             let artwork = apiCollection.data[0];
             console.log(artwork);
            if (!artwork || !artwork.image_id) {
-                return getArtwork();
-            }
+                throw new Error("Artwork missing image");
+           }
             let properLink = `https://www.artic.edu/iiif/2/${artwork.image_id}/full/600,/0/default.jpg`;
             let workDisplayed = artworkSection.querySelector("ul");
             workDisplayed.textContent = "";
@@ -27,7 +24,7 @@ function getArtwork() {
             img.onerror = () =>{
                 artworkSection.querySelector("ul").innerHTML = "";
                 let errorOnPage = document.createElement("p");
-                errorOnPage.textContent = "Image forbidden hit next again";
+                errorOnPage.textContent = "Image forbidden...hit next again";
                 artworkSection.querySelector("ul").appendChild(errorOnPage);
             }
             img.src = properLink;
@@ -45,7 +42,7 @@ function getArtwork() {
         .catch(error => {
             artworkSection.querySelector("ul").innerHTML = "";
             let errorOnPage = document.createElement("p");
-            errorOnPage.textContent = `API fetch failed: ${error.message}, reloading...`;
+            errorOnPage.textContent = `API fetch failed: ${error.message}, try next again...`;
             artworkSection.querySelector("ul").appendChild(errorOnPage);
         });
 }
@@ -61,9 +58,6 @@ function getProducts() {
     fetch(`https://api.artic.edu/api/v1/products?page=${randomPage}&limit=1&fields=title,web_url,image_url`)
         .then(res => {
             if (!res.ok) {
-                if (res.status === 404 || res.status === 403 ){
-                     return getProducts();
-                }
                 throw new Error(`HTTP Error ${res.status}`);
             }
             return res.json();
@@ -73,13 +67,20 @@ function getProducts() {
             console.log(products)
             let item = products.data[0];
             if (!item || !item.image_url) {
-                return getProducts();
+                throw new Error("Product missing image");
             }
             console.log(item);
             console.log(item.title)
+            console.log(item.data);
             let productDisplayed = itemSection.querySelector("ul");
             productDisplayed.innerHTML = "";
             const img = document.createElement("img");
+            img.onerror = () =>{
+                itemSection.querySelector("ul").innerHTML = "";
+                let errorOnPage = document.createElement("p");
+                errorOnPage.textContent = "Image not found...hit random product again";
+                itemSection.querySelector("ul").appendChild(errorOnPage);
+            }
             img.src = item.image_url;
             const title = document.createElement("h2");
             title.textContent = item.title;
@@ -94,7 +95,7 @@ function getProducts() {
         .catch(error => {
             itemSection.querySelector("ul").innerHTML = "";
             let errorOnPage = document.createElement("p");
-            errorOnPage.textContent = `API fetch failed: ${error.message}, reloading...`;
+            errorOnPage.textContent = `API fetch failed: ${error.message},...try reandom product again.`;
             itemSection.querySelector("ul").appendChild(errorOnPage);
 
         });
