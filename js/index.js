@@ -24,8 +24,7 @@ let skills = [
     "Collaboration",
     "Communication",
     "Project Management",
-    "MATLAB",
-    "Fusion 360"
+    "MATLAB"
 ];
 
 /////////SKILLS
@@ -78,7 +77,7 @@ messageForm.addEventListener("submit", (event) => {
 function messagesVisible() {
     let messagesSectionDom = document.getElementById("messages");
     let messageList = messagesSectionDom.querySelector('ul');
-    if (messageList.childElementCount == 0) {
+    if (messageList.childElementCount === 0) {
         messagesSectionDom.style.display = "none";
     }
     else {
