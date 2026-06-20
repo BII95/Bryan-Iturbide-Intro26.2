@@ -1,3 +1,4 @@
+/* Desktop-first responsive design */
 * {
     box-sizing: border-box;
 }
@@ -258,6 +259,7 @@ section {
     transform: scale(1.1);
 }
 
+/* Mobile devices: 460px and below */
 @media (max-width: 460px) {
     h1 {
         font-size: 40px;
